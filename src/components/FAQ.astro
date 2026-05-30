@@ -1,0 +1,46 @@
+---
+const faqs = [
+  { q: "¿Cuánto tiempo toma desarrollar un sistema?", a: "Una landing suele tomar entre 7 y 10 días. Un sistema POS o personalizado puede tomar entre 15 y 45 días según el alcance." },
+  { q: "¿El sistema funciona en celulares y tablets?", a: "Sí. Todo se diseña responsive para que puedas controlar tu negocio desde cualquier lugar." },
+  { q: "¿Ofrecen capacitación y soporte?", a: "Sí. Incluimos sesiones de capacitación para ti y tu equipo, además de soporte técnico constante." },
+  { q: "¿Los sistemas incluyen integración con SUNAT?", a: "Sí. Integramos facturación electrónica cumpliendo con todas las normativas de SUNAT." },
+  { q: "¿Qué pasa si ya tengo un sistema y quiero migrar?", a: "Te ayudamos con la migración de tus datos (productos, clientes, saldos) para que no pierdas información." },
+  { q: "¿Cómo empiezo?", a: "Es simple: cotizamos por WhatsApp, definimos el alcance, realizamos un adelanto y empezamos a construir tu herramienta." },
+];
+---
+
+<section id="faq" class="bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow text-slate-500">Preguntas Frecuentes</span>
+      <h2 class="mt-3 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">Dudas comunes antes de iniciar</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-x-12 gap-y-4">
+      {faqs.map((faq) => (
+        <details class="reveal group border-b border-slate-100 py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-extrabold text-ink group-hover:text-cobalt-600 transition-colors">
+            {faq.q}
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-50 text-slate-400 group-open:rotate-180 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-sm leading-7 text-slate-600 max-w-xl">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+    
+    <!-- Floating WhatsApp CTA (Optional but useful) -->
+    <div class="mt-16 flex justify-center reveal">
+        <a href="#contacto" class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-emerald-50 text-emerald-700 font-bold text-sm border border-emerald-100 hover:bg-emerald-100 transition-colors">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            ¿Necesitas un sistema o página web? Te ayudo por WhatsApp
+        </a>
+    </div>
+  </div>
+</section>

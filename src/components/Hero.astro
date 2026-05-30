@@ -1,0 +1,76 @@
+---
+const { whatsapp } = Astro.props;
+---
+
+<section class="relative border-b border-slate-200 bg-gradient-to-br from-white via-bone-50 to-cobalt-50/70 overflow-hidden">
+  <div class="absolute inset-0 dot-matrix opacity-40"></div>
+  <div class="absolute -right-24 top-24 h-80 w-80 rounded-full bg-ember-500/15 blur-3xl animate-blob"></div>
+  <div class="absolute -left-24 bottom-10 h-80 w-80 rounded-full bg-cobalt-500/15 blur-3xl animate-blob [animation-delay:2s]"></div>
+  
+  <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-8 lg:grid-cols-2 lg:px-8 lg:py-12">
+    <div class="reveal-left">
+      <span class="inline-flex rounded-full border border-ember-200 bg-ember-50 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-ember-600 shimmer">Sistemas y páginas web a medida</span>
+      <h1 class="mt-6 max-w-2xl text-5xl font-extrabold leading-[1.05] tracking-[-0.05em] text-ink sm:text-6xl lg:text-7xl">
+  Tu negocio está perdiendo 
+  <span class="text-ember-500 italic animate-float inline-block">
+    tiempo y clientes.
+  </span>
+  <br />
+  Nosotros lo solucionamos 
+  <span class="relative inline-block">
+  
+    <span class="absolute bottom-2 left-0 h-3 w-full bg-cobalt-200/70 -rotate-1 rounded-sm animate-pulse"></span>
+  </span>
+</h1>
+
+<p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+  Creamos sistemas y páginas web modernas para automatizar procesos, organizar tu negocio y ayudarte a vender más.
+</p>
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row reveal-group">
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="btn-hover-effect shimmer inline-flex items-center justify-center gap-2 rounded-full bg-ember-500 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-ember-500/25 hover:bg-ember-600">
+          Cotizar por WhatsApp 
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </a>
+        <a href="#proyectos" class="btn-hover-effect inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-sm font-bold text-ink hover:border-cobalt-600 hover:text-cobalt-700 shadow-sm">
+          Ver proyectos reales
+        </a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-[11px] font-bold uppercase tracking-widest text-slate-400 reveal-group">
+        <div class="flex items-center gap-2">
+          <span class="text-ember-500">◇</span> Integración con SUNAT
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-ember-500">◇</span> Capacitación incluida
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-ember-500">◇</span> Soporte personalizado
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-ember-500">◇</span> Desarrollo a medida
+        </div>
+      </div>
+    </div>
+    <div class="relative reveal-right lg:ml-auto">
+      <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cobalt-500/20 to-ember-500/20 blur-2xl"></div>
+      <div class="relative parallax" data-speed="0.1">
+        <!-- Dashboard Mockup Principal (Laptop) -->
+        <div class="relative z-10">
+          <img 
+            src="/img/laptop.png" 
+            alt="Dashboard Preview" 
+            class="w-full h-auto transition-transform duration-700 hover:scale-[1.02]"
+          />
+        </div>
+
+        <!-- Mobile Mockup Overlay -->
+        <div class="absolute -bottom-10 -left-6 z-20 w-32 sm:w-48 parallax" data-speed="0.2">
+          <img 
+            src="/img/celular.png" 
+            alt="Mobile Preview" 
+            class="w-full h-auto drop-shadow-2xl transition-transform duration-700 hover:scale-110"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

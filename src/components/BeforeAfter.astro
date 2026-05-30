@@ -1,0 +1,73 @@
+---
+const antes = [
+  "Ventas anotadas en cuadernos",
+  "Pérdida de productos",
+  "Reportes manuales y tardíos",
+  "Desorden y pérdida de tiempo",
+];
+
+const despues = [
+  "Ventas rápidas y seguras",
+  "Stock siempre bajo control",
+  "Reportes al instante",
+  "Más tiempo para hacer crecer tu negocio",
+];
+---
+
+<section class="bg-white py-20 lg:py-28 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center reveal">
+      <span class="eyebrow text-slate-500">Antes y Después</span>
+      <h2 class="mt-3 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">Transformamos la forma en que trabajas</h2>
+    </div>
+
+    <div class="mt-16 relative">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <!-- Antes -->
+        <div class="reveal rounded-[2rem] border border-red-100 bg-red-50/30 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest">Antes</span>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-8 items-center">
+             <ul class="space-y-4">
+              {antes.map((item) => (
+                <li class="flex items-center gap-3 text-sm font-semibold text-slate-600">
+                  <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-[10px]">✕</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="rounded-2xl overflow-hidden border border-slate-200 grayscale opacity-60">
+              <img src="https://framerusercontent.com/images/old-way.jpg" alt="Antigua forma de trabajar" class="w-full h-48 object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Después -->
+        <div class="reveal rounded-[2rem] border border-emerald-100 bg-emerald-50/30 p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-widest">Después</span>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-8 items-center">
+            <ul class="space-y-4">
+              {despues.map((item) => (
+                <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                  <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-[10px]">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="rounded-2xl overflow-hidden border border-emerald-200 shadow-xl shadow-emerald-500/10">
+              <img src="https://framerusercontent.com/images/new-way.jpg" alt="Nueva forma de trabajar" class="w-full h-48 object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arrow separator -->
+      <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-200 shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-ember-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,154 @@
+{
+  "empresa": "INTIHAWUA",
+  "descripcion": "INTIHAWUA es una agencia de desarrollo web y marketing digital enfocada en ayudar a empresas a escalar su presencia online con soluciones tecnológicas modernas y efectivas.",
+  "servicios": [
+    "Desarrollo de Landing Pages de alta conversión",
+    "Diseño UI/UX moderno y responsivo",
+    "SEO y Posicionamiento Web",
+    "Marketing Digital y Publicidad",
+    "Desarrollo de Aplicaciones Web personalizadas"
+  ],
+  "correo": "contacto@intihawua.com",
+  "telefono": "+51 987 654 321",
+  "whatsapp": "+51 987 654 321",
+  "ubicacion": "Lima, Perú - Atención Virtual en todo el mundo",
+  "horarios": "Lunes a Viernes: 9:00 AM - 6:00 PM, Sábados: 9:00 AM - 1:00 PM",
+  "mensaje_inicial": "Hola, soy Qori. ¿En qué puedo ayudarte hoy?",
+  "sugerencias": ["Servicios", "Contacto", "WhatsApp", "Horarios"],
+  "tecnologias": ["Astro", "Tailwind CSS", "React", "TypeScript", "Next.js"],
+  "preguntas_frecuentes": [
+    {
+      "keywords": ["hola", "buenas", "saludos","quien eres"],
+      "respuesta": "¡Hola! Soy Qori, el asistente virtual de INTIHAWUA. ¿Cómo puedo ayudarte?"
+    },
+    {
+      "keywords":["para que estas aqui"],
+      "respuesta":"Para ayudarte a crear una presencia online efectiva y a escalar tu negocio."
+    },
+    {
+      "keywords": ["quienes son", "empresa", "intihawua"],
+      "respuesta": "INTIHAWUA es una agencia especializada en desarrollo web, diseño digital y marketing para empresas que buscan crecer en internet."
+    },
+    {
+      "keywords": ["landing page", "pagina web", "sitio web"],
+      "respuesta": "Creamos landing pages modernas, rápidas y optimizadas para captar clientes y aumentar conversiones."
+    },
+    {
+      "keywords": ["seo", "posicionamiento"],
+      "respuesta": "Ofrecemos servicios de SEO para mejorar la visibilidad de tu negocio en los motores de búsqueda."
+    },
+    {
+      "keywords": ["marketing", "publicidad", "anuncios"],
+      "respuesta": "Podemos ayudarte con campañas de marketing digital y publicidad para aumentar tu alcance y generar más clientes."
+    },
+    {
+      "keywords": ["react", "astro", "nextjs", "typescript"],
+      "respuesta": "Trabajamos con tecnologías modernas como Astro, React, TypeScript, Next.js y Tailwind CSS."
+    },
+    {
+      "keywords": ["proyecto", "trabajo", "cotizacion"],
+      "respuesta": "Cada proyecto es único. Contáctanos por WhatsApp y te brindaremos una cotización personalizada."
+    },
+    {
+      "keywords": ["gracias"],
+      "respuesta": "¡Con gusto! Si tienes otra consulta sobre INTIHAWUA, estaré encantado de ayudarte."
+    },
+    {
+      "keywords": ["adios", "hasta luego", "nos vemos"],
+      "respuesta": "¡Hasta pronto! Gracias por visitar INTIHAWUA."
+    },
+    {
+      "keywords": ["servicios", "ofrecen", "hacen", "trabajan" ],
+      "respuesta": "Ofrecemos desarrollo de landing pages, diseño UI/UX, SEO, marketing digital y aplicaciones web personalizadas."
+    },
+    {
+      "keywords": ["contacto", "comunicarme", "hablar", "correo", "telefono", "whatsapp"],
+      "respuesta": "Puedes contactarnos a través de nuestro correo: contacto@intihawua.com o llamándonos al +51 987 654 321."
+    },
+    {
+      "keywords": ["whatsapp", "escribir", "celular", "mensaje"],
+      "respuesta": "Nuestro WhatsApp es +51 987 654 321. Estaremos encantados de atenderte."
+    },
+    {
+      "keywords": ["donde", "ubicados", "oficina", "direccion", "ubicacion"],
+      "respuesta": "Estamos ubicados en Lima, Perú, pero atendemos de forma virtual a clientes de todo el mundo."
+    },
+    {
+      "keywords": ["horario", "atencion", "cuando", "abierto"],
+      "respuesta": "Nuestro horario de atención es de Lunes a Viernes de 9:00 AM a 6:00 PM y Sábados de 9:00 AM a 1:00 PM."
+    },
+    {
+      "keywords": ["tecnologias", "herramientas", "usan", "lenguajes"],
+      "respuesta": "Utilizamos tecnologías modernas como Astro, Tailwind CSS, React, TypeScript y Next.js para garantizar el mejor rendimiento."
+    },
+    {
+      "keywords": ["precio", "costo", "cuanto", "vale"],
+      "respuesta": "Los precios varían según el proyecto. Te recomendamos contactarnos por WhatsApp para darte un presupuesto personalizado."
+    },
+    {
+      "keywords": ["portafolio", "proyectos", "trabajos realizados", "casos de exito"],
+      "respuesta": "Contamos con experiencia en desarrollo web, landing pages y soluciones digitales adaptadas a las necesidades de cada cliente."
+    },
+    {
+    "keywords": ["tiempo", "demora", "cuanto tardan", "duracion"],
+    "respuesta": "El tiempo de desarrollo depende del alcance del proyecto. Una landing page puede estar lista en pocos días, mientras que proyectos más complejos requieren una planificación específica."
+    },
+    {
+    "keywords": ["soporte", "mantenimiento", "ayuda tecnica"],
+    "respuesta": "Sí, ofrecemos soporte y mantenimiento para garantizar el correcto funcionamiento de los proyectos desarrollados."
+    },
+    {
+    "keywords": ["responsive", "movil", "celular", "adaptable"],
+    "respuesta": "Todos nuestros desarrollos están optimizados para dispositivos móviles, tablets y computadoras."
+    },
+    {
+    "keywords": ["hosting", "dominio", "servidor"],
+    "respuesta": "Podemos asesorarte en la contratación de hosting y dominios para tu proyecto digital."
+    },
+    {
+    "keywords": ["internacional", "otros paises", "clientes extranjeros"],
+    "respuesta": "Trabajamos de forma remota con clientes de Perú y de otros países."
+    },
+    {
+    "keywords": ["redes sociales", "facebook", "instagram", "tiktok"],
+    "respuesta": "También podemos ayudarte con estrategias digitales y presencia online para potenciar tu marca."
+    },
+    {
+    "keywords": ["landing", "landing page", "pagina de aterrizaje"],
+    "respuesta": "Diseñamos landing pages enfocadas en generar conversiones, captar clientes y maximizar resultados."
+    },
+    {
+    "keywords": ["web", "pagina web", "sitio web"],
+    "respuesta": "Desarrollamos sitios web modernos, rápidos, optimizados para SEO y adaptados a dispositivos móviles."
+    },
+    {
+    "keywords": ["ecommerce", "tienda online", "tienda virtual"],
+    "respuesta": "Podemos desarrollar tiendas virtuales personalizadas para que vendas productos o servicios por internet."
+    },
+    {
+    "keywords": ["automatizacion", "automatizar", "procesos"],
+    "respuesta": "Creamos soluciones para automatizar tareas y procesos empresariales, mejorando la productividad y reduciendo tiempos operativos."
+    },
+    {
+    "keywords": ["ia", "inteligencia artificial", "chatbot"],
+    "respuesta": "Podemos integrar soluciones de inteligencia artificial y chatbots personalizados para mejorar la atención y automatización de procesos."
+    },
+    {
+    "keywords": ["cotizacion", "presupuesto", "propuesta"],
+    "respuesta": "Cada proyecto es diferente. Contáctanos por WhatsApp para recibir una cotización personalizada según tus necesidades."
+    },
+    {
+    "keywords": ["pago", "formas de pago", "metodos de pago"],
+    "respuesta": "Las formas de pago pueden variar según el proyecto. Contáctanos para conocer las opciones disponibles."
+    },
+    {
+    "keywords": ["garantia", "garantias"],
+    "respuesta": "Nuestros proyectos incluyen acompañamiento y soporte para garantizar un resultado profesional y funcional."
+    },
+    {
+    "keywords": ["equipo", "trabajadores", "desarrolladores"],
+    "respuesta": "INTIHAWUA cuenta con profesionales enfocados en desarrollo web, diseño digital y soluciones tecnológicas."
+    }
+
+  ]
+}

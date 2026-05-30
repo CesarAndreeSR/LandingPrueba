@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import BeforeAfter from "../components/BeforeAfter.astro";
+import Projects from "../components/Projects.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Pricing from "../components/Pricing.astro";
+import FAQ from "../components/FAQ.astro";
+import FooterCTA from "../components/FooterCTA.astro";
+import Footer from "../components/Footer.astro";
+
+const whatsapp = "https://wa.me/51983134672?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20web%20o%20sistema%20personalizado%20para%20mi%20negocio.";
+
+const nav = [
+  ["Inicio", "#inicio"],
+  ["Servicios", "#servicios"],
+  ["Proyectos", "#proyectos"],
+  ["Precios", "#precios"],
+  ["Sobre mí", "#sobre-mi"],
+  ["Blog", "#"],
+  ["Contacto", "#contacto"],
+];
+---
+
+<Layout title="Intihawua — Sistemas POS, Inventario y Páginas Web Premium">
+  <Header nav={nav} whatsapp={whatsapp} />
+  
+  <main id="inicio">
+    <Hero whatsapp={whatsapp} />
+    <About />
+    <Services />
+    <BeforeAfter />
+    <Projects />
+    <Testimonials />
+    <Pricing whatsapp={whatsapp} />
+    <FAQ />
+    <FooterCTA whatsapp={whatsapp} />
+  </main>
+
+  <Footer nav={nav} whatsapp={whatsapp} />
+</Layout>

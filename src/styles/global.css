@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", "Iowan Old Style", "Apple Garamond",
+    "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+
+  /* Cobalt — tech blue, calibrated to the logo */
+  --color-cobalt-50: #eaf3fc;
+  --color-cobalt-100: #d0e5f9;
+  --color-cobalt-200: #9dcaf2;
+  --color-cobalt-300: #5fa9e8;
+  --color-cobalt-400: #2e8adb;
+  --color-cobalt-500: #1e70cc;
+  --color-cobalt-600: #1a55a8;
+  --color-cobalt-700: #173f82;
+  --color-cobalt-800: #142f62;
+  --color-cobalt-900: #0f2347;
+
+  /* Ember — pure orange, calibrated to the logo */
+  --color-ember-50: #fff5ec;
+  --color-ember-100: #ffe6cf;
+  --color-ember-300: #ffb478;
+  --color-ember-500: #f97316;
+  --color-ember-600: #e25a0f;
+  --color-ember-700: #b8480c;
+
+  /* Bone — cool light gray for editorial sections (no longer warm cream) */
+  --color-bone-50: #f6f8fb;
+  --color-bone-100: #eef2f7;
+  --color-bone-200: #dde4ee;
+
+  --color-ink: #0a0a0f;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-ink);
+}
+
+/* ============== Editorial typography helpers ============== */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "kern";
+  letter-spacing: -0.01em;
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Eyebrow label (uppercase mono) */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Vertical sidebar label */
+.rotate-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.3em;
+}
+
+/* Big section number */
+.section-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-ember-500);
+  color: #fff;
+}
+
+/* Logo helpers */
+.logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* Subtle dot matrix background */
+.dot-matrix {
+  background-image: radial-gradient(
+    circle,
+    rgba(15, 23, 42, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+.dot-matrix-fade {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 40%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 40%,
+    transparent 75%
+  );
+}
+
+/* Animated glowing border on hover for cards */
+.glow-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 112, 204, 0) 0%,
+    rgba(30, 112, 204, 0) 40%,
+    rgba(30, 112, 204, 0.7) 50%,
+    rgba(30, 112, 204, 0) 60%,
+    rgba(30, 112, 204, 0) 100%
+  );
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-position 0.8s ease;
+  pointer-events: none;
+}
+.glow-card:hover::before {
+  opacity: 1;
+  background-position: 100% 100%;
+}
+.glow-card:hover {
+  box-shadow: 0 10px 40px -10px rgba(30, 112, 204, 0.25);
+}
+
+/* Marquee for trust strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee-fast {
+  animation: marquee 22s linear infinite;
+}
+
+/* Subtle blob background — cobalt + ember from the logo */
+.hero-blob {
+  background: radial-gradient(
+    600px circle at 18% 8%,
+    rgba(30, 112, 204, 0.14),
+    transparent 60%
+  ),
+  radial-gradient(
+    500px circle at 82% 18%,
+    rgba(249, 115, 22, 0.12),
+    transparent 60%
+  );
+}
+
+/* Grain overlay — adds editorial warmth */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+/* Blinking caret */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Diagonal hatch — for accent strips */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(10, 10, 15, 0.06) 0,
+    rgba(10, 10, 15, 0.06) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* Underline draw on hover */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s ease;
+}
+.link-draw:hover {
+  background-size: 100% 1px;
+}
+
+/* Ticker dot separator */
+.tick-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-ember-500);
+  flex: 0 0 auto;
+}
+.reveal {
+  animation: reveal-up 0.8s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 28%;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .reveal {
+    animation: none;
+  }
+}

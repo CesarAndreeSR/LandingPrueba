@@ -1,0 +1,85 @@
+---
+const { nav, whatsapp } = Astro.props;
+
+const services = [
+  { label: "Sistemas POS", href: "#servicios" },
+  { label: "Inventario", href: "#servicios" },
+  { label: "Páginas Web", href: "#servicios" },
+  { label: "Desarrollo a medida", href: "#servicios" },
+];
+
+const social = [
+  { label: "Facebook", href: "#", icon: "FB" },
+  { label: "Instagram", href: "#", icon: "IG" },
+  { label: "WhatsApp", href: whatsapp, icon: "WA" },
+];
+---
+
+<footer class="bg-[#07111f] text-white pt-20 pb-10">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-4 border-b border-white/10 pb-16">
+      <div class="lg:col-span-1">
+        <a href="#inicio" class="flex items-center gap-3">
+          <img src="/IntiLogo.svg" alt="Intihawua" class="h-10 w-auto" />
+          <span class="text-sm font-extrabold uppercase tracking-[0.2em]">Intihawua</span>
+        </a>
+        <p class="mt-6 text-sm leading-7 text-white/50 max-w-xs">
+          Desarrollo de sistemas y páginas web a medida para negocios en Perú. Innovación, velocidad y diseño premium.
+        </p>
+      </div>
+      
+      <div>
+        <h3 class="text-xs font-extrabold uppercase tracking-widest text-white/30">Navegación</h3>
+        <ul class="mt-6 space-y-4 text-sm font-bold">
+          {nav.map(([label, href]) => (
+            <li><a href={href} class="text-white/60 hover:text-ember-500 transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-xs font-extrabold uppercase tracking-widest text-white/30">Servicios</h3>
+        <ul class="mt-6 space-y-4 text-sm font-bold">
+          {services.map((service) => (
+            <li><a href={service.href} class="text-white/60 hover:text-ember-500 transition-colors">{service.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-xs font-extrabold uppercase tracking-widest text-white/30">Contacto</h3>
+        <ul class="mt-6 space-y-4 text-sm font-bold">
+          <li class="flex items-center gap-3 text-white/60">
+            <span class="text-ember-500 text-lg">📍</span> Pucallpa, Perú
+          </li>
+          <li>
+            <a href="tel:+51983134672" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors">
+              <span class="text-ember-500 text-lg">📞</span> +51 983 134 672
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hola@intihawua.com" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors">
+              <span class="text-ember-500 text-lg">✉️</span> hola@intihawua.com
+            </a>
+          </li>
+        </ul>
+        
+        <div class="mt-8 flex gap-4">
+          {social.map(s => (
+            <a href={s.href} class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-white/30 transition-all text-xs font-bold">
+              {s.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-10 flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+      <p>© 2024 Intihawua. Todos los derechos reservados.</p>
+      <div class="flex gap-8">
+        <a href="#" class="hover:text-white transition-colors">Política de privacidad</a>
+        <a href="#" class="hover:text-white transition-colors">Términos y condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>
