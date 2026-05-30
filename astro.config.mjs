@@ -8,7 +8,12 @@ import node from '@astrojs/node';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    resolve: {
+      // Explicitly setting this to false to avoid the missing field error in some Vite/Tailwind versions
+      // @ts-ignore
+      tsconfigPaths: false
+    }
   },
 
   adapter: node({
