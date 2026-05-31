@@ -13,7 +13,7 @@
   "whatsapp": "+51 987 654 321",
   "ubicacion": "Lima, Perú - Atención Virtual en todo el mundo",
   "horarios": "Lunes a Viernes: 9:00 AM - 6:00 PM, Sábados: 9:00 AM - 1:00 PM",
-  "mensaje_inicial": "Hola, soy Qori. ¿En qué puedo ayudarte hoy?",
+  "mensaje_inicial": "Hola, soy Qori, asesor digital de INTIHAWUA. Estoy aquí para ayudarte a encontrar la mejor solución tecnológica para tu negocio. ¿Cómo puedo ayudarte hoy?",  
   "sugerencias": ["Servicios", "Contacto", "WhatsApp", "Horarios"],
   "tecnologias": ["Astro", "Tailwind CSS", "React", "TypeScript", "Next.js"],
   "preguntas_frecuentes": [
@@ -148,7 +148,39 @@
     {
     "keywords": ["equipo", "trabajadores", "desarrolladores"],
     "respuesta": "INTIHAWUA cuenta con profesionales enfocados en desarrollo web, diseño digital y soluciones tecnológicas."
-    }
+    },
+    {
+  "keywords": ["porque elegirlos", "por que elegirlos", "porque ustedes", "por que ustedes"],
+  "respuesta": "En INTIHAWUA trabajamos enfocándonos en entender las necesidades de cada cliente para ofrecer soluciones digitales personalizadas. Nuestro objetivo es crear herramientas que aporten valor real al crecimiento de cada negocio."
+},
+{
+  "keywords": ["porque confiar", "confianza", "son confiables", "puedo confiar"],
+  "respuesta": "La confianza se construye con compromiso, transparencia y resultados. En INTIHAWUA buscamos mantener una comunicación clara durante cada etapa del proyecto para que nuestros clientes tengan la tranquilidad de estar acompañados en todo momento."
+},
+{
+  "keywords": ["quien es qori", "que es qori", "qori"],
+  "respuesta": "Soy Qori, el asesor digital de INTIHAWUA. Estoy aquí para ayudarte a conocer nuestros servicios, resolver tus dudas y orientarte sobre la mejor solución para tu proyecto."
+},
+{
+  "keywords": ["experiencia", "cuanta experiencia tienen"],
+  "respuesta": "Contamos con experiencia en desarrollo web, diseño digital y soluciones tecnológicas orientadas a mejorar la presencia online y los procesos de nuestros clientes."
+},
+{
+  "keywords": ["trabajan bien", "son buenos", "son profesionales"],
+  "respuesta": "Nuestro compromiso es ofrecer soluciones de calidad, mantener una comunicación constante y desarrollar proyectos alineados con los objetivos de cada cliente."
+},
+{
+  "keywords": ["que beneficios obtengo", "beneficios", "ventajas"],
+  "respuesta": "Nuestros servicios están orientados a mejorar la presencia digital de tu negocio, aumentar la visibilidad de tu marca y facilitar la captación de nuevos clientes."
+},
+{
+  "keywords": ["necesito ayuda", "me puedes ayudar"],
+  "respuesta": "Por supuesto. Cuéntame qué necesitas y haré lo posible por orientarte o dirigirte al servicio más adecuado dentro de INTIHAWUA."
+},
+{
+  "keywords": ["no se que necesito", "que me recomiendas"],
+  "respuesta": "No hay problema. Cuéntame un poco sobre tu negocio o proyecto y te ayudaré a identificar la solución digital que mejor se adapte a tus objetivos."
+}
 
   ]
 }
