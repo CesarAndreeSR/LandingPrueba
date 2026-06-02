@@ -9,9 +9,9 @@ const services = [
 ];
 
 const social = [
-  { label: "Facebook", href: "#", icon: "FB" },
-  { label: "Instagram", href: "#", icon: "IG" },
-  { label: "WhatsApp", href: whatsapp, icon: "WA" },
+  { label: "Facebook", href: "#", icon: "fi fi-brands-facebook" },
+  { label: "Instagram", href: "#", icon: "fi fi-brands-instagram" },
+  { label: "WhatsApp", href: whatsapp, icon: "fi fi-brands-whatsapp" },
 ];
 ---
 
@@ -50,24 +50,31 @@ const social = [
         <h3 class="text-xs font-extrabold uppercase tracking-widest text-white/30">Contacto</h3>
         <ul class="mt-6 space-y-4 text-sm font-bold">
           <li class="flex items-center gap-3 text-white/60">
-            <span class="text-ember-500 text-lg">📍</span> Pucallpa, Perú
+             <i class="fi fi-bs-marker"></i>
+              Pucallpa, Perú
           </li>
           <li>
             <a href="tel:+51983134672" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors">
-              <span class="text-ember-500 text-lg">📞</span> +51 983 134 672
+              <i class="fi fi-br-phone-call"></i>
+              +51 983 134 672
             </a>
           </li>
           <li>
             <a href="mailto:hola@intihawua.com" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors">
-              <span class="text-ember-500 text-lg">✉️</span> hola@intihawua.com
+              <i class="fi fi-bs-envelope"></i>
+              hola@intihawua.com
             </a>
           </li>
         </ul>
         
         <div class="mt-8 flex gap-4">
           {social.map(s => (
-            <a href={s.href} class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-white/30 transition-all text-xs font-bold">
-              {s.icon}
+            <a
+              href={s.href}
+              class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-white/30 transition-all"
+              aria-label={s.label}
+            >
+              <i class={s.icon}></i>
             </a>
           ))}
         </div>
@@ -75,7 +82,7 @@ const social = [
     </div>
     
     <div class="mt-10 flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
-      <p>© 2024 Intihawua. Todos los derechos reservados.</p>
+      <p>© 2026 Intihawua. Todos los derechos reservados.</p>
       <div class="flex gap-8">
         <a href="#" class="hover:text-white transition-colors">Política de privacidad</a>
         <a href="#" class="hover:text-white transition-colors">Términos y condiciones</a>
