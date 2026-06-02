@@ -8,32 +8,49 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  /* Cobalt — tech blue, calibrated to the logo #066DC8 */
-  --color-cobalt-50: #eaf6ff;
-  --color-cobalt-100: #d0ebff;
-  --color-cobalt-200: #9dd6ff;
-  --color-cobalt-300: #5fbdff;
-  --color-cobalt-400: #2e9eff;
-  --color-cobalt-500: #066dc8;
-  --color-cobalt-600: #0558b3;
-  --color-cobalt-700: #044594;
-  --color-cobalt-800: #033475;
-  --color-cobalt-900: #022557;
+  /* INTIHAWUA Brand Colors */
+  /* Azul base: #0A58CA - Identidad visual, iconos tecnológicos y acentos del header */
+  --color-cobalt-50: #e8f4ff;
+  --color-cobalt-100: #d1e9ff;
+  --color-cobalt-200: #a3d3ff;
+  --color-cobalt-300: #75bdff;
+  --color-cobalt-400: #47a7ff;
+  --color-cobalt-500: #0A58CA;
+  --color-cobalt-600: #0847a3;
+  --color-cobalt-700: #06367c;
+  --color-cobalt-800: #042555;
+  --color-cobalt-900: #02142e;
 
-  /* Ember — pure orange, calibrated to the logo #F7780B */
-  --color-ember-50: #fff5ec;
-  --color-ember-100: #ffe6cf;
-  --color-ember-300: #ffb478;
-  --color-ember-500: #f7780b;
-  --color-ember-600: #d9690a;
-  --color-ember-700: #b85608;
+  /* Azul claro: #0099FF - Acentos secundarios */
+  --color-cobalt-light: #0099FF;
+
+  /* Naranja vibrante: #FF6600 - Botones CTA y elementos destacados */
+  --color-ember-50: #fff5eb;
+  --color-ember-100: #ffeacc;
+  --color-ember-200: #ffd499;
+  --color-ember-300: #ffbd66;
+  --color-ember-400: #ffa633;
+  --color-ember-500: #FF6600;
+  --color-ember-600: #cc5200;
+  --color-ember-700: #993d00;
+  --color-ember-800: #662900;
+  --color-ember-900: #331400;
+
+  /* Amarillo: #FFAA00 - Acentos adicionales */
+  --color-ember-yellow: #FFAA00;
+
+  /* Azul muy oscuro: #0B132B - Texto principal y títulos H1, H2, H3 */
+  --color-ink: #0B132B;
+
+  /* Gris neutro: #5C677D - Párrafos secundarios y texto con menor jerarquía */
+  --color-slate-400: #5C677D;
+  --color-slate-500: #4a5568;
+  --color-slate-600: #3d4452;
 
   /* Bone — cool light gray for editorial sections */
   --color-bone-50: #f6f8fb;
   --color-bone-100: #eef2f7;
   --color-bone-200: #dde4ee;
-
-  --color-ink: #11283b;
 }
 
 html {
@@ -258,4 +275,73 @@ body {
   .reveal {
     animation: none;
   }
+}
+
+/* Fade in up animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* ============== INTIHAWUA Brand Utility Classes ============== */
+
+/* Botón principal CTA - Naranja vibrante #FF6600 */
+.btn-intihawua-primary {
+  background-color: #FF6600;
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 102, 0, 0.3);
+}
+
+.btn-intihawua-primary:hover {
+  background-color: #FFAA00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+.btn-intihawua-primary:active {
+  transform: translateY(0);
+}
+
+/* Título principal - Azul muy oscuro #0B132B */
+.title-intihawua {
+  color: #0B132B;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Fondo de sección - Blanco con acento azul */
+.section-intihawua {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.section-intihawua::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0A58CA 0%, #0099FF 100%);
 }

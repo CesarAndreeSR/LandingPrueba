@@ -2,30 +2,30 @@
 const { nav, whatsapp } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500" id="main-header">
+<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 bg-white" id="main-header">
   <div class="mx-auto max-w-7xl px-4 py-4 lg:px-6">
-    <nav class="flex items-center justify-between glass rounded-3xl px-6 py-3 shadow-xl shadow-ink/5 border-white/20">
+    <nav class="flex items-center justify-between">
       <a href="#inicio" class="flex items-center gap-3 group">
-        <div class="h-10 w-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-cobalt-50 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-inner">
+        <div class="h-10 w-10 flex items-center justify-center rounded-xl bg-white border border-slate-100 group-hover:bg-cobalt-50 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-inner">
           <img src="/IntiLogo.svg" alt="Intihawua" class="h-6 w-auto" />
         </div>
         <div class="hidden sm:block">
-          <span class="block text-[10px] font-black uppercase tracking-[0.3em] text-ink leading-none">Intihawua</span>
-          <span class="text-[7px] font-bold uppercase tracking-[0.1em] text-slate-400 mt-1 block">Software para tu negocio</span>
+          <span class="block text-[10px] font-black uppercase tracking-[0.3em] text-[#0B132B] leading-none">Intihawua</span>
+          <span class="text-[7px] font-bold uppercase tracking-[0.1em] text-[#5C677D] mt-1 block">Software para tu negocio</span>
         </div>
       </a>
 
       <div class="hidden items-center gap-8 lg:flex">
         {nav.map(([label, href]) => (
-          <a href={href} class="text-[10px] font-black uppercase tracking-[0.1em] text-slate-500 transition-all hover:text-cobalt-500 hover:tracking-[0.2em]">{label}</a>
+          <a href={href} class="text-[10px] font-black uppercase tracking-[0.1em] text-[#0B132B] transition-all hover:text-[#0A58CA] hover:tracking-[0.2em]">{label}</a>
         ))}
       </div>
 
       <div class="flex items-center gap-4">
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-ink px-6 py-3 text-[9px] font-black uppercase tracking-[0.1em] text-white transition-all hover:bg-cobalt-500 hover:shadow-lg hover:shadow-cobalt-500/20 active:scale-95">
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-[#FF6600] px-6 py-3 text-[9px] font-black uppercase tracking-[0.1em] text-white transition-all hover:bg-[#FFAA00] hover:shadow-lg hover:shadow-[#FF6600]/30 active:scale-95">
           Información
         </a>
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl bg-ember-500 text-white shadow-lg shadow-ember-500/20 active:scale-90 transition-all">
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[#FF6600] text-white shadow-lg shadow-[#FF6600]/30 active:scale-90 transition-all">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </a>
       </div>
@@ -35,6 +35,24 @@ const { nav, whatsapp } = Astro.props;
 
 <script>
   const header = document.getElementById('main-header');
+  const footer = document.getElementById('contacto');
+
+  // Ocultar header cuando el footer es visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        header?.classList.add('-translate-y-full', 'opacity-0');
+      } else {
+        header?.classList.remove('-translate-y-full', 'opacity-0');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (footer) {
+    observer.observe(footer);
+  }
+
+  // Mantener el comportamiento original de padding al hacer scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header?.classList.add('py-2');

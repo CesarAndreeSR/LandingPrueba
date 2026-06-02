@@ -2,29 +2,29 @@
 const { whatsapp } = Astro.props;
 ---
 
-<section class="relative bg-white pt-24 pb-32 lg:pt-32 lg:pb-40 overflow-hidden">
+<section class="relative bg-[#0B132B] pt-24 pb-32 lg:pt-32 lg:pb-40 overflow-hidden">
   <!-- Ultra Modern Background Effects -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
-    <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-cobalt-500/5 rounded-full blur-[100px] animate-pulse-soft"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-ember-500/5 rounded-full blur-[80px] animate-pulse-soft" style="animation-delay: 4s;"></div>
+    <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#0A58CA]/10 rounded-full blur-[100px] animate-pulse-soft"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#FF6600]/10 rounded-full blur-[80px] animate-pulse-soft" style="animation-delay: 4s;"></div>
   </div>
-  
+
   <div class="relative mx-auto max-w-7xl px-5 lg:px-8 z-10">
     <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
-      <h1 class="gsap-reveal text-5xl font-black tracking-tight text-ink sm:text-7xl lg:text-9xl leading-[0.85] mb-10">
+      <h1 class="gsap-reveal text-5xl font-black tracking-tight text-white sm:text-7xl lg:text-9xl leading-[0.85] mb-10">
         Impulsa tu <br />
-        <span class="text-cobalt-500">negocio hoy.</span>
+        <span class="text-[#0099FF]">negocio hoy.</span>
       </h1>
 
-      <p class="gsap-reveal text-lg sm:text-xl text-slate-500 leading-relaxed mb-16 max-w-2xl font-medium">
+      <p class="gsap-reveal text-lg sm:text-xl text-[#5C677D] leading-relaxed mb-16 max-w-2xl font-medium">
         Creamos herramientas digitales fáciles de usar para que tu negocio sea más ordenado, venda más y crezca sin complicaciones.
       </p>
 
       <div class="gsap-reveal flex flex-col sm:flex-row items-center gap-6 mb-24 w-full sm:w-auto">
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="btn-saas btn-saas-primary w-full sm:w-auto text-base uppercase tracking-widest active:scale-95">
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-[#FF6600] text-white text-sm font-black uppercase tracking-[0.1em] transition-all hover:bg-[#FFAA00] hover:shadow-lg hover:shadow-[#FF6600]/30 active:scale-95">
           Pedir información
         </a>
-        <a href="#servicios" class="btn-saas btn-saas-secondary w-full sm:w-auto text-base uppercase tracking-widest active:scale-95">
+        <a href="#servicios" class="px-8 py-4 rounded-xl border-2 border-white/20 text-white text-sm font-black uppercase tracking-[0.1em] transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
           Ver servicios
         </a>
       </div>
@@ -71,22 +71,6 @@ const { whatsapp } = Astro.props;
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-slate-100 rounded-full opacity-40 pointer-events-none -z-10"></div>
         </div>
       </div>
-    </div>
-
-    <!-- High-Value Stats -->
-    <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 gsap-reveal">
-      {[
-        { n: "100+", t: "Negocios felices", i: "🏆" },
-        { n: "24/7", t: "Te ayudamos siempre", i: "🛡️" },
-        { n: "100%", t: "Seguro en internet", i: "☁️" },
-        { n: "SUNAT", t: "Todo legal", i: "📄" }
-      ].map(stat => (
-        <div class="group flex flex-col items-center lg:items-start">
-          <div class="text-xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.i}</div>
-          <div class="text-3xl font-black text-ink mb-1 tracking-tighter group-hover:text-cobalt-500 transition-colors">{stat.n}</div>
-          <div class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-slate-400 group-hover:text-ember-500 transition-colors">{stat.t}</div>
-        </div>
-      ))}
     </div>
   </div>
 </section>
