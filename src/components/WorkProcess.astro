@@ -1,0 +1,105 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Reunión inicial",
+    description: "Conversamos sobre tu negocio para entender qué es lo que necesitas exactamente.",
+    icon: "fi fi-br-users"
+  },
+  {
+    number: "02",
+    title: "Diseño de tu página",
+    description: "Creamos un diseño moderno y profesional que le guste a tus clientes.",
+    icon: "fi fi-br-palette"
+  },
+  {
+    number: "03",
+    title: "Construcción",
+    description: "Nuestros expertos programan tu sistema o página con la mejor tecnología.",
+    icon: "fi fi-br-settings"
+  },
+  {
+    number: "04",
+    title: "Pruebas",
+    description: "Revisamos que todo funcione perfecto antes de entregarte el proyecto.",
+    icon: "fi fi-br-shield-check"
+  },
+  {
+    number: "05",
+    title: "Lanzamiento",
+    description: "Ponemos tu sistema en marcha y te enseñamos a usarlo paso a paso.",
+    icon: "fi fi-br-rocket-lunch"
+  }
+];
+
+const techs = [
+  { name: "Laravel", color: "text-[#FF2D20]" },
+  { name: "PHP", color: "text-[#777BB4]" },
+  { name: "React", color: "text-[#61DAFB]" },
+  { name: "Git", color: "text-[#F05032]" },
+  { name: "Tailwind", color: "text-[#06B6D4]" },
+  { name: "JavaScript", color: "text-[#3178C6]" },
+  { name: "Postgres", color: "text-[#4169E1]" }
+];
+---
+
+<section id="proceso" class="bg-slate-50 py-20 lg:py-32 relative overflow-hidden">
+  <!-- Dynamic grid background -->
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+  
+  <div class="mx-auto max-w-7xl px-5 lg:px-8 relative z-10">
+    <div class="max-w-4xl mb-24 gsap-reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="mt-6 text-4xl font-black tracking-tight text-ink sm:text-6xl leading-[0.9]">Pasos simples para crear <span class="text-cobalt-500">tu proyecto.</span></h2>
+    </div>
+
+    <!-- Process Flow -->
+    <div class="grid gap-12 lg:grid-cols-5 lg:gap-10 gsap-reveal">
+      {steps.map((step, index) => (
+        <div class="group relative">
+          <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div class="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white border border-slate-100 shadow-lg transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-cobalt-500/10 group-hover:border-cobalt-100">
+              <i class={`${step.icon} text-3xl group-hover:scale-110 transition-transform duration-500 text-ink group-hover:text-cobalt-500`}></i>
+              <!-- Step Number Badge -->
+              <div class="absolute -top-2 -right-2 h-8 w-8 rounded-xl bg-ink flex items-center justify-center text-[10px] font-black text-white shadow-xl group-hover:bg-ember-500 transition-colors">
+                {step.number}
+              </div>
+            </div>
+            
+            <h3 class="mt-8 text-xl font-black text-ink tracking-tight group-hover:text-cobalt-500 transition-colors">{step.title}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-slate-500 font-medium">
+              {step.description}
+            </p>
+          </div>
+
+          <!-- Connecting Arrow (Desktop) -->
+          {index !== steps.length - 1 && (
+            <div class="hidden lg:block absolute top-10 left-full w-full h-px border-t border-dashed border-slate-200 -translate-x-6 z-0 opacity-20 group-hover:opacity-60 transition-opacity"></div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Tech Stack (Premium Style) -->
+    <div class="mt-32 border-t border-slate-200 pt-24 gsap-reveal">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
+        <div class="max-w-xl">
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4 block">Tecnología que usamos</span>
+          <h3 class="text-3xl font-black text-ink tracking-tighter">Usamos lo mejor para que tu sistema sea rápido y seguro.</h3>
+        </div>
+        <p class="text-slate-500 font-medium max-w-sm text-base">Herramientas modernas que garantizan que tu negocio nunca se detenga.</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center lg:justify-between items-center gap-10 lg:gap-8">
+        {techs.map((tech) => (
+          <div class="group flex flex-col items-center lg:items-start transition-all duration-500">
+            <span class={`text-lg font-black tracking-tighter ${tech.color} opacity-40 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-1`}>
+              {tech.name}
+            </span>
+            <div class="h-1 w-0 bg-cobalt-500 mt-2 transition-all duration-700 group-hover:w-full rounded-full"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

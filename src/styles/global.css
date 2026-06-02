@@ -8,32 +8,32 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  /* Cobalt — tech blue, calibrated to the logo */
-  --color-cobalt-50: #eaf3fc;
-  --color-cobalt-100: #d0e5f9;
-  --color-cobalt-200: #9dcaf2;
-  --color-cobalt-300: #5fa9e8;
-  --color-cobalt-400: #2e8adb;
-  --color-cobalt-500: #1e70cc;
-  --color-cobalt-600: #1a55a8;
-  --color-cobalt-700: #173f82;
-  --color-cobalt-800: #142f62;
-  --color-cobalt-900: #0f2347;
+  /* Cobalt — tech blue, calibrated to the logo #066DC8 */
+  --color-cobalt-50: #eaf6ff;
+  --color-cobalt-100: #d0ebff;
+  --color-cobalt-200: #9dd6ff;
+  --color-cobalt-300: #5fbdff;
+  --color-cobalt-400: #2e9eff;
+  --color-cobalt-500: #066dc8;
+  --color-cobalt-600: #0558b3;
+  --color-cobalt-700: #044594;
+  --color-cobalt-800: #033475;
+  --color-cobalt-900: #022557;
 
-  /* Ember — pure orange, calibrated to the logo */
+  /* Ember — pure orange, calibrated to the logo #F7780B */
   --color-ember-50: #fff5ec;
   --color-ember-100: #ffe6cf;
   --color-ember-300: #ffb478;
-  --color-ember-500: #f97316;
-  --color-ember-600: #e25a0f;
-  --color-ember-700: #b8480c;
+  --color-ember-500: #f7780b;
+  --color-ember-600: #d9690a;
+  --color-ember-700: #b85608;
 
-  /* Bone — cool light gray for editorial sections (no longer warm cream) */
+  /* Bone — cool light gray for editorial sections */
   --color-bone-50: #f6f8fb;
   --color-bone-100: #eef2f7;
   --color-bone-200: #dde4ee;
 
-  --color-ink: #0a0a0f;
+  --color-ink: #11283b;
 }
 
 html {
@@ -132,11 +132,11 @@ body {
   padding: 1px;
   background: linear-gradient(
     135deg,
-    rgba(30, 112, 204, 0) 0%,
-    rgba(30, 112, 204, 0) 40%,
-    rgba(30, 112, 204, 0.7) 50%,
-    rgba(30, 112, 204, 0) 60%,
-    rgba(30, 112, 204, 0) 100%
+    rgba(6, 109, 200, 0) 0%,
+    rgba(6, 109, 200, 0) 40%,
+    rgba(6, 109, 200, 0.7) 50%,
+    rgba(6, 109, 200, 0) 60%,
+    rgba(6, 109, 200, 0) 100%
   );
   background-size: 200% 200%;
   background-position: 0% 0%;
@@ -154,7 +154,7 @@ body {
   background-position: 100% 100%;
 }
 .glow-card:hover {
-  box-shadow: 0 10px 40px -10px rgba(30, 112, 204, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(6, 109, 200, 0.25);
 }
 
 /* Marquee for trust strip */
@@ -173,12 +173,12 @@ body {
 .hero-blob {
   background: radial-gradient(
     600px circle at 18% 8%,
-    rgba(30, 112, 204, 0.14),
+    rgba(6, 109, 200, 0.14),
     transparent 60%
   ),
   radial-gradient(
     500px circle at 82% 18%,
-    rgba(249, 115, 22, 0.12),
+    rgba(247, 120, 11, 0.12),
     transparent 60%
   );
 }

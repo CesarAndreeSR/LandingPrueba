@@ -5,11 +5,9 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Services from "../components/Services.astro";
 import BeforeAfter from "../components/BeforeAfter.astro";
-import Projects from "../components/Projects.astro";
 import Testimonials from "../components/Testimonials.astro";
-import Pricing from "../components/Pricing.astro";
+import WorkProcess from "../components/WorkProcess.astro";
 import FAQ from "../components/FAQ.astro";
-import FooterCTA from "../components/FooterCTA.astro";
 import Footer from "../components/Footer.astro";
 
 const whatsapp = "https://wa.me/51983134672?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20web%20o%20sistema%20personalizado%20para%20mi%20negocio.";
@@ -17,10 +15,9 @@ const whatsapp = "https://wa.me/51983134672?text=Hola%2C%20quiero%20cotizar%20un
 const nav = [
   ["Inicio", "#inicio"],
   ["Servicios", "#servicios"],
-  ["Proyectos", "#proyectos"],
-  ["Precios", "#precios"],
+  ["Proceso", "#proceso"],
+  ["Testimonios", "#testimonios"],
   ["Sobre mí", "#sobre-mi"],
-  ["Blog", "#"],
   ["Contacto", "#contacto"],
 ];
 ---
@@ -29,15 +26,28 @@ const nav = [
   <Header nav={nav} whatsapp={whatsapp} />
   
   <main id="inicio">
+    <!-- 1. Captura de atención -->
     <Hero whatsapp={whatsapp} />
-    <About />
+    
+    <!-- 2. Valor inmediato -->
     <Services />
+    
+    <!-- 3. Cómo lo logramos -->
+    <WorkProcess />
+    
+    <!-- 4. Resultados tangibles -->
     <BeforeAfter />
-    <Projects />
-    <Testimonials />
-    <Pricing whatsapp={whatsapp} />
+    
+    <!-- 5. Validación social -->
+    <div id="testimonios">
+      <Testimonials />
+    </div>
+    
+    <!-- 6. Confianza y equipo -->
+    <About />
+    
+    <!-- 7. Resolución de dudas -->
     <FAQ />
-    <FooterCTA whatsapp={whatsapp} />
   </main>
 
   <Footer nav={nav} whatsapp={whatsapp} />

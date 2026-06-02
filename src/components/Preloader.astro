@@ -1,0 +1,165 @@
+---
+---
+
+<div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white overflow-hidden">
+  <!-- Innovative Sun Rays Effect -->
+  <div class="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+    <div class="sun-rays-container">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div class="ray" style={`--i: ${i}`}></div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Central Logo Container -->
+  <div class="relative z-10 flex flex-col items-center">
+    <div class="logo-outer-glow"></div>
+    <div class="logo-wrapper mb-10">
+      <img src="/IntiLogo.svg" alt="Intihawua Logo" class="relative z-20 h-40 w-40 opacity-0 scale-50" id="preloader-logo" />
+    </div>
+    
+    <div class="overflow-hidden">
+      <h2 class="text-ink text-sm font-black uppercase tracking-[1em] translate-y-full opacity-0" id="preloader-text">
+        Intihawua
+      </h2>
+    </div>
+  </div>
+
+  <!-- Progress Indicator -->
+  <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+    <div class="text-[10px] font-black text-slate-300 uppercase tracking-widest" id="loading-percent">0%</div>
+    <div class="w-48 h-[2px] bg-slate-50 overflow-hidden rounded-full">
+      <div id="preloader-bar" class="h-full w-0 bg-cobalt-600 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(37,99,235,0.5)]"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sun-rays-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ray {
+    position: absolute;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(to top, transparent, rgba(6, 109, 200, 0.05), transparent);
+    transform: rotate(calc(var(--i) * 30deg));
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .logo-outer-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    filter: blur(40px);
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  /* Preloader Exit Animations */
+  #preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.8s;
+  }
+</style>
+
+<script is:inline>
+  // FAIL-SAFE: Ocultar el preloader si algo falla después de 6 segundos
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader && preloader.style.display !== 'none') {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.body.classList.remove('overflow-hidden');
+      }, 800);
+    }
+  }, 6000);
+</script>
+
+<script>
+  import anime from 'animejs';
+
+  const startAnimation = () => {
+    const preloader = document.getElementById('preloader');
+    const logo = document.getElementById('preloader-logo');
+    const text = document.getElementById('preloader-text');
+    const bar = document.getElementById('preloader-bar');
+    const percentText = document.getElementById('loading-percent');
+    const rays = document.querySelectorAll('.ray');
+    const glow = document.querySelector('.logo-outer-glow');
+
+    if (!preloader || !logo || !text || !bar) return;
+
+    // Timeline for innovative preloader
+    const tl = anime.timeline({
+      easing: 'easeOutExpo'
+    });
+
+    tl.add({
+      targets: bar,
+      width: '100%',
+      duration: 2000,
+      update: (anim) => {
+        if (percentText) percentText.textContent = `${Math.round(anim.progress)}%`;
+      },
+      begin: () => {
+        anime({
+          targets: rays,
+          opacity: [0, 1],
+          duration: 1000,
+          delay: anime.stagger(100)
+        });
+      }
+    })
+    .add({
+      targets: glow,
+      scale: [0, 1.5],
+      opacity: [0, 1],
+      duration: 1200,
+    }, '-=1500')
+    .add({
+      targets: logo,
+      scale: [0.3, 1],
+      opacity: [0, 1],
+      rotate: '1turn',
+      duration: 1500,
+    }, '-=1200')
+    .add({
+      targets: text,
+      translateY: [40, 0],
+      opacity: [0, 1],
+      letterSpacing: ['2em', '1em'],
+      duration: 1000,
+    }, '-=800')
+    .add({
+      targets: preloader,
+      opacity: 0,
+      duration: 1000,
+      delay: 500,
+      complete: () => {
+        preloader.style.display = 'none';
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  };
+
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    startAnimation();
+  } else {
+    document.addEventListener('DOMContentLoaded', startAnimation);
+  }
+</script>

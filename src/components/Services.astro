@@ -1,65 +1,183 @@
 ---
 const services = [
   {
-    title: "Sistemas POS e Inventario",
-    description: "Controla tus ventas, productos y clientes desde cualquier dispositivo.",
-    icon: "🛒",
-    bullets: ["Ventas rápidas y fáciles", "Control de stock en tiempo real", "Reportes de ventas y ganancias", "Integración con SUNAT", "Multiusuario y permisos"],
-    image: "/img/pos.png",
-    buttonText: "Ver demo del sistema",
-    buttonLink: "#proyectos"
+    id: "sistemas",
+    title: "Sistemas para cobrar y vender",
+    description: "Creamos el corazón de tu negocio. Un sistema fácil para controlar todo sin errores.",
+    features: [
+      { title: "Control de productos", desc: "Sabe siempre cuánto tienes en almacén y recibe avisos cuando falte algo." },
+      { title: "Ventas y Boletas", desc: "Cobra rápido y envía boletas o facturas a la SUNAT automáticamente." },
+      { title: "Resumen de ventas", desc: "Mira cuánto vas vendiendo cada día con gráficos simples y claros." },
+      { title: "Úsalo donde quieras", desc: "Entra a tu sistema desde cualquier celular o computadora con internet." }
+    ],
+    image: "/img/laptop.png",
+    buttonText: "Ver qué puede hacer",
+    icon: "💻",
+    demos: [
+      { name: "Demo Pastelería", url: "https://demo.intihawua.app/pasteleria" },
+      { name: "Demo Sistema de Cobranzas", url: "https://demo.intihawua.app/cobranzas" }
+    ]
   },
   {
-    title: "Páginas Web Profesionales",
-    description: "Diseñamos páginas modernas que transmiten confianza y atraen clientes.",
-    icon: "🌐",
-    bullets: ["Diseño responsive (móvil y desktop)", "Velocidad y SEO optimizado", "Formulario de contacto y WhatsApp", "Hosting y dominio", "Autoadministrable"],
-    image: "/img/web.png",
-    buttonText: "Ver ejemplos de páginas",
-    buttonLink: "#proyectos"
+    id: "web",
+    title: "Páginas web profesionales",
+    description: "No solo hacemos páginas, creamos herramientas para que más clientes te encuentren y te compren.",
+    icon: "💎",
+    features: [
+      { title: "Diseño moderno", desc: "Tu página se verá profesional y dará mucha confianza a tus clientes." },
+      { title: "Hecha para vender", desc: "Todo está puesto en el lugar correcto para que te escriban o te compren." },
+      { title: "Carga muy rápido", desc: "Tus clientes no esperarán. La página abre al instante en cualquier celular." },
+      { title: "Aparece en Google", desc: "Ayudamos a que tu negocio salga en los primeros resultados cuando te busquen." }
+    ],
+    image: "/img/celular.png",
+    buttonText: "Ver modelos",
+    demos: [
+      { name: "Página Clínica Premium", url: "https://demo.intihawua.app/clinica" }
+    ]
   }
 ];
 ---
 
-<section id="servicios" class="bg-bone-50 py-20 lg:py-28">
+<section id="servicios" class="bg-white py-20 lg:py-32 relative overflow-hidden">
   <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center reveal">
-      <span class="eyebrow text-ember-600">Servicios</span>
-      <h2 class="mt-3 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">Soluciones que se adaptan a tu negocio</h2>
+    <div class="max-w-4xl mb-24 gsap-reveal">
+      <span class="eyebrow">Nuestras Soluciones</span>
+      <h2 class="mt-6 text-4xl font-black tracking-tight text-ink sm:text-6xl leading-[0.9]">Hacemos que tu <span class="text-cobalt-500">negocio</span> crezca con tecnología.</h2>
     </div>
 
-    <div class="mt-16 grid gap-8 lg:grid-cols-2 reveal-group">
-      {services.map((service) => (
-        <div class="reveal-scale group relative flex flex-col rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-2xl hover:shadow-cobalt-900/10 overflow-hidden">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-ember-50 text-2xl shadow-sm group-hover:scale-110 transition-transform">{service.icon}</div>
-            <div>
-              <h3 class="text-2xl font-extrabold tracking-tight text-ink">{service.title}</h3>
-              <p class="text-sm text-slate-500 font-medium">{service.description}</p>
+    <div class="space-y-32">
+      {services.map((service, index) => (
+        <div class={`group flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} gsap-reveal`}>
+          <!-- Content Side -->
+          <div class="flex-1 space-y-10">
+            
+            <div class="space-y-6">
+              <h3 class="text-4xl font-black text-ink sm:text-5xl tracking-tighter leading-none group-hover:text-cobalt-500 transition-colors duration-500">{service.title}</h3>
+              <p class="text-xl text-slate-500 leading-relaxed max-w-xl font-medium">{service.description}</p>
             </div>
-          </div>
-          
-          <div class="grid sm:grid-cols-2 gap-8 items-start">
-            <ul class="space-y-3">
-              {service.bullets.map((bullet) => (
-                <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
-                  <span class="text-ember-500">✓</span>
-                  {bullet}
-                </li>
+
+            <!-- Accordion Style Features -->
+            <div class="space-y-4 pt-2">
+              {service.features.map((feature) => (
+                <details class="group/item border-b border-slate-100 pb-4 cursor-pointer">
+                  <summary class="flex items-center justify-between list-none font-black text-ink text-lg py-2 hover:text-cobalt-500 transition-colors">
+                    {feature.title}
+                    <span class="text-slate-300 group-open/item:rotate-180 group-open/item:text-cobalt-500 transition-all duration-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    </span>
+                  </summary>
+                  <div class="pt-3 text-slate-500 leading-relaxed text-base font-medium">
+                    {feature.desc}
+                  </div>
+                </details>
               ))}
-            </ul>
-            <div class="relative rounded-xl border border-slate-100 bg-slate-50 p-2 shadow-inner overflow-hidden aspect-[4/3] sm:aspect-auto">
-              <img src={service.image} alt={service.title} class="rounded-lg w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+
+            <div class="pt-6">
+              <button 
+                data-service-id={service.id}
+                class="demo-btn btn-saas btn-saas-primary px-10 py-5 text-xs uppercase tracking-[0.2em]"
+              >
+                {service.buttonText}
+              </button>
             </div>
           </div>
-          
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href={service.buttonLink} class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-xl bg-ember-500 text-white font-bold text-sm shadow-lg shadow-ember-500/20 hover:bg-ember-600 transition-colors">
-              {service.buttonText}
-            </a>
+
+          <!-- Image Side -->
+          <div class="flex-1 w-full relative">
+            <div class="relative group/img">
+              <div class="relative transform group-hover/img:scale-[1.02] group-hover/img:-rotate-1 transition-all duration-1000 ease-out">
+                <img src={service.image} alt={service.title} class="w-full h-auto drop-shadow-[0_30px_50px_rgba(0,0,0,0.1)]" />
+              </div>
+            </div>
           </div>
         </div>
       ))}
     </div>
   </div>
+
+  <!-- Glassmorphism Demo Modal -->
+  <div id="demo-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6">
+    <div class="absolute inset-0 bg-ink/70 backdrop-blur-2xl transition-opacity duration-500" id="modal-overlay"></div>
+    
+    <div class="relative w-full max-w-lg glass p-10 lg:p-12 rounded-[3rem] shadow-2xl transform transition-all duration-700 scale-95 opacity-0 translate-y-8" id="modal-content">
+      <button class="absolute top-8 right-8 text-slate-400 hover:text-ink transition-colors" id="close-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="text-center mb-10">
+        <div id="modal-icon" class="inline-flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white shadow-xl text-5xl mb-6 border border-slate-50"></div>
+        <h3 id="modal-title" class="text-3xl font-black text-ink tracking-tighter">Probar ahora</h3>
+        <p class="text-slate-500 mt-2 text-base font-medium">Mira cómo funciona en un negocio real.</p>
+      </div>
+
+      <div id="demo-list" class="space-y-4">
+        <!-- Injected via script -->
+      </div>
+    </div>
+  </div>
 </section>
+
+<script define:vars={{ services }}>
+  const modal = document.getElementById('demo-modal');
+  const modalContent = document.getElementById('modal-content');
+  const overlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('close-modal');
+  const demoList = document.getElementById('demo-list');
+  const modalTitle = document.getElementById('modal-title');
+  const modalIcon = document.getElementById('modal-icon');
+
+  function openModal(serviceId) {
+    const service = services.find(s => s.id === serviceId);
+    if (!service) return;
+
+    modalIcon.textContent = service.icon;
+    modalTitle.textContent = service.title;
+    
+    demoList.innerHTML = '';
+    service.demos.forEach(demo => {
+      const btn = document.createElement('button');
+      btn.className = 'w-full flex items-center justify-between gap-6 p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-cobalt-500 hover:shadow-2xl hover:shadow-cobalt-500/10 transition-all group text-left';
+      btn.innerHTML = `
+        <div>
+          <span class="block text-[10px] font-black text-slate-300 uppercase tracking-widest mb-1">Empresa Real</span>
+          <span class="text-xl font-black text-ink group-hover:text-cobalt-600 transition-colors uppercase tracking-tight">${demo.name}</span>
+        </div>
+        <div class="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-cobalt-500 group-hover:text-white transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+        </div>
+      `;
+      btn.onclick = () => window.open(demo.url, '_blank');
+      demoList.appendChild(btn);
+    });
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    setTimeout(() => {
+      modalContent.classList.remove('scale-95', 'opacity-0', 'translate-y-12');
+      modalContent.classList.add('scale-100', 'opacity-100', 'translate-y-0');
+    }, 10);
+  }
+
+  function closeModal() {
+    modalContent.classList.add('scale-95', 'opacity-0', 'translate-y-12');
+    modalContent.classList.remove('scale-100', 'opacity-100', 'translate-y-0');
+    
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }, 500);
+  }
+
+  document.querySelectorAll('.demo-btn').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.serviceId));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>

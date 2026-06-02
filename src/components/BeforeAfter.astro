@@ -1,72 +1,67 @@
 ---
 const antes = [
-  "Ventas anotadas en cuadernos",
-  "Pérdida de productos",
-  "Reportes manuales y tardíos",
-  "Desorden y pérdida de tiempo",
+  "Uso de papeles, cuadernos o Excel",
+  "Cosas que se pierden sin saber cómo",
+  "Reportes que demoran mucho tiempo",
+  "Nadie te encuentra en internet",
 ];
 
 const despues = [
-  "Ventas rápidas y seguras",
-  "Stock siempre bajo control",
-  "Reportes al instante",
-  "Más tiempo para hacer crecer tu negocio",
+  "Sistemas modernos y muy rápidos",
+  "Control total de tus productos",
+  "Reportes claros al instante",
+  "Página web que da mucha confianza",
 ];
 ---
 
-<section class="bg-white py-20 lg:py-28 overflow-hidden">
+<section class="relative bg-white py-20 lg:py-32 overflow-hidden">
   <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center reveal">
-      <span class="eyebrow text-slate-500">Antes y Después</span>
-      <h2 class="mt-3 text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">Transformamos la forma en que trabajas</h2>
+    <div class="max-w-4xl mb-24 gsap-reveal">
+      <span class="eyebrow">El cambio en tu negocio</span>
+      <h2 class="mt-6 text-4xl font-black tracking-tight text-ink sm:text-6xl leading-[0.9]">De lo antiguo a lo <span class="text-cobalt-500">moderno.</span></h2>
     </div>
 
-    <div class="mt-16 relative">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-        <!-- Antes -->
-        <div class="reveal rounded-[2rem] border border-red-100 bg-red-50/30 p-8">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-bold uppercase tracking-widest">Antes</span>
+    <div class="grid lg:grid-cols-2 gap-px bg-slate-100 rounded-[3rem] overflow-hidden border border-slate-100 shadow-xl gsap-reveal">
+      <!-- Antes -->
+      <div class="bg-white p-12 sm:p-16 space-y-12">
+        <div class="flex items-center gap-4">
+          <div class="h-12 w-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-500 shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </div>
-          <div class="grid sm:grid-cols-2 gap-8 items-center">
-             <ul class="space-y-4">
-              {antes.map((item) => (
-                <li class="flex items-center gap-3 text-sm font-semibold text-slate-600">
-                  <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-[10px]">✕</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div class="rounded-2xl overflow-hidden border border-slate-200">
-              <img src="/img/antes.png" alt="Antigua forma de trabajar" class="w-full h-48 object-cover" />
-            </div>
+          <h3 class="text-2xl font-black text-slate-300 uppercase tracking-tighter italic">Antes</h3>
+        </div>
+        
+        <ul class="space-y-6">
+          {antes.map((item) => (
+            <li class="flex items-start gap-4 text-lg font-bold text-slate-300">
+              <span class="mt-2 h-2 w-2 rounded-full bg-slate-200 shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Después -->
+      <div class="bg-slate-50 p-12 sm:p-16 space-y-12 relative group">
+        <!-- Premium Floating Badge -->
+        <div class="absolute top-0 right-0 p-8">
+          <div class="h-16 w-16 rounded-2xl bg-cobalt-500 flex items-center justify-center text-white shadow-xl shadow-cobalt-500/30 animate-pulse-soft">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
           </div>
         </div>
 
-        <!-- Después -->
-        <div class="reveal rounded-[2rem] border border-emerald-100 bg-emerald-50/30 p-8">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-widest">Después</span>
-          </div>
-          <div class="grid sm:grid-cols-2 gap-8 items-center">
-            <ul class="space-y-4">
-              {despues.map((item) => (
-                <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
-                  <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 text-[10px]">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div class="rounded-2xl overflow-hidden border border-emerald-200 shadow-xl shadow-emerald-500/10">
-              <img src="/img/despues.png" alt="Nueva forma de trabajar" class="w-full h-48 object-cover" />
-            </div>
-          </div>
+        <div class="flex items-center gap-4">
+          <h3 class="text-2xl font-black text-cobalt-500 uppercase tracking-tighter">Ahora</h3>
         </div>
-      </div>
-      
-      <!-- Arrow separator -->
-      <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full bg-white border border-slate-200 shadow-lg z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-ember-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        
+        <ul class="space-y-6">
+          {despues.map((item) => (
+            <li class="flex items-start gap-4 text-lg font-black text-ink">
+              <span class="mt-2 h-2.5 w-2.5 rounded-full bg-cobalt-500 shrink-0 shadow-[0_0_8px_rgba(6,109,200,0.5)]"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </div>
