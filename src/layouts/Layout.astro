@@ -241,7 +241,7 @@ const {
       });
 
       // Global Reveal Animations
-      window.addEventListener('load', () => {
+      const initGSAPReveals = () => {
         const reveals = document.querySelectorAll('.gsap-reveal');
         reveals.forEach(el => {
           gsap.fromTo(el, 
@@ -260,7 +260,13 @@ const {
             }
           );
         });
-      });
+      };
+
+      if (window['preloaderDone']) {
+        initGSAPReveals();
+      } else {
+        window.addEventListener('preloaderComplete', initGSAPReveals);
+      }
     </script>
   </body>
 </html>

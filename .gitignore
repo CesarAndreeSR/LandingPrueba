@@ -8,6 +8,9 @@ yarn-error.log*
 # Astro
 .astro/
 
+# Vercel
+.vercel/
+
 # Environment variables
 .env.exmaple
 .env

@@ -22,7 +22,6 @@ const services = [
     id: "web",
     title: "Páginas web profesionales",
     description: "No solo hacemos páginas, creamos herramientas para que más clientes te encuentren y te compren.",
-    icon: "💎",
     features: [
       { title: "Diseño moderno", desc: "Tu página se verá profesional y dará mucha confianza a tus clientes." },
       { title: "Hecha para vender", desc: "Todo está puesto en el lugar correcto para que te escriban o te compren." },
@@ -86,8 +85,8 @@ const services = [
           <!-- Image Side -->
           <div class="flex-1 w-full relative">
             <div class="relative group/img">
-              <div class="relative transform group-hover/img:scale-[1.02] group-hover/img:-rotate-1 transition-all duration-1000 ease-out">
-                <img src={service.image} alt={service.title} class="w-full h-auto drop-shadow-[0_30px_50px_rgba(0,0,0,0.1)]" />
+              <div class="relative transform group-hover/img:scale-[1.02] group-hover/img:-rotate-1 transition-all duration-1000 ease-out rounded-[3rem]">
+                <img src={service.image} alt={service.title} class="w-full h-auto drop-shadow-[0_30px_50px_rgba(0,0,0,0.1)] rounded-[3rem]" />
               </div>
             </div>
           </div>
