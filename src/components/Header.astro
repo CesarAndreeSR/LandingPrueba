@@ -58,9 +58,9 @@ const { nav, whatsapp } = Astro.props;
   // Mantener el comportamiento original de padding al hacer scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header?.classList.add('border-b', 'border-black/50', );
+        header?.classList.add('border-b', 'border-black/25', );
     } else {
-        header?.classList.remove('border-b', 'border-black/50', );
+        header?.classList.remove('border-b', 'border-black/10', );
     }
 });
 </script>
