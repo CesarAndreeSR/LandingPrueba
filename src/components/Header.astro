@@ -36,14 +36,17 @@ const { nav, whatsapp } = Astro.props;
 <script>
   const header = document.getElementById('main-header');
   const footer = document.getElementById('contacto');
+  const qoriChat = document.getElementById('qori-chatbot');
 
-  // Ocultar header cuando el footer es visible
+  // Ocultar header y chat cuando el footer es visible
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         header?.classList.add('-translate-y-full', 'opacity-0');
+        qoriChat?.classList.add('-translate-y-20', 'opacity-0', 'pointer-events-none');
       } else {
         header?.classList.remove('-translate-y-full', 'opacity-0');
+        qoriChat?.classList.remove('-translate-y-20', 'opacity-0', 'pointer-events-none');
       }
     });
   }, { threshold: 0.1 });
