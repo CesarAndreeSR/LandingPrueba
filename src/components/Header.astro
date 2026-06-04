@@ -2,8 +2,8 @@
 const { nav, whatsapp } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 bg-white" id="main-header">
-  <div class="mx-auto max-w-7xl px-4 py-4 lg:px-6">
+<header class="fixed top-0 left-0 right-0 z-[100]  duration-500 bg-white" id="main-header">
+  <div class="mx-auto max-w-6xl px-4 py-4 lg:px-6">
     <nav class="flex items-center justify-between">
       <a href="#inicio" class="flex items-center gap-3 group">
         <div class="h-10 w-20 flex">
@@ -58,11 +58,9 @@ const { nav, whatsapp } = Astro.props;
   // Mantener el comportamiento original de padding al hacer scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header?.classList.add('py-2');
-      header?.classList.remove('py-4');
+        header?.classList.add('border-b', 'border-black/50', );
     } else {
-      header?.classList.add('py-4');
-      header?.classList.remove('py-2');
+        header?.classList.remove('border-b', 'border-black/50', );
     }
-  });
+});
 </script>
