@@ -10,14 +10,15 @@ const { nav, whatsapp } = Astro.props;
           <img src="/IntiLogo.svg" alt="Intihawua" />
         </div>
         <div class="hidden sm:block">
-          <span class="block text-[10px] font-black uppercase tracking-[0.3em] text-[#0B132B] leading-none">Intihawua</span>
-          <span class="text-[7px] font-bold uppercase tracking-[0.1em] text-[#5C677D] mt-1 block">Software para tu negocio</span>
+          <span class="block text-[15px] font-black uppercase tracking-[0.4em] text-[#0B132B] leading-none">Intihawua</span>
+          <span class="text-[8px] font-bold uppercase tracking-[0.1em] text-[#5C677D] mt-1 block">Software para tu negocio</span>
         </div>
       </a>
 
       <div class="hidden items-center gap-8 lg:flex">
         {nav.map(([label, href]) => (
-          <a href={href} class="text-[10px] font-black uppercase tracking-[0.1em] text-[#0B132B] transition-all hover:text-[#0A58CA] hover:tracking-[0.2em]">{label}</a>
+          <!-- Solo borramos la palabra "uppercase" de las clases -->
+          <a href={href} class="text-[13px] font-black tracking-[0.1em] text-[#0B132B] transition-all hover:text-[#0A58CA] hover:tracking-[0.2em]">{label}</a>
         ))}
       </div>
 
