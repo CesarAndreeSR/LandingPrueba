@@ -1,0 +1,108 @@
+---
+import LayoutNoPreloader from '../layouts/LayoutNoPreloader.astro';
+
+const nav = [
+  ["Inicio", "/#inicio"],
+  ["Servicios", "/#servicios"],
+  ["Proceso", "/#proceso"],
+  ["Nosotros", "/#nosotros"],
+  ["Testimonios", "/#testimonios"],
+  ["FAQ", "/#faq"],
+];
+
+const whatsapp = "https://wa.me/51983134672";
+
+const demos = [
+  {
+    category: "Sistemas para cobrar y vender",
+    items: [
+      { name: "Demo Pastelería", url: "https://demo.intihawua.app/pasteleria", status: "available" },
+      { name: "Demo Sistema de Cobranzas", url: "https://demo.intihawua.app/cobranzas", status: "available" },
+      { name: "Demo Farmacia", url: "#", status: "coming-soon" },
+      { name: "Demo Restaurante", url: "#", status: "coming-soon" }
+    ]
+  },
+  {
+    category: "Páginas web profesionales",
+    items: [
+      { name: "Página Clínica Premium", url: "https://demo.intihawua.app/clinica", status: "available" },
+      { name: "Landing Page E-commerce", url: "#", status: "coming-soon" },
+      { name: "Página Corporativa", url: "#", status: "coming-soon" }
+    ]
+  }
+];
+---
+
+<LayoutNoPreloader title="Demos Disponibles - Intihawua" {nav} {whatsapp}>
+  <section class="bg-[#0B132B] pt-24 pb-16">
+    <div class="mx-auto max-w-4xl px-5 lg:px-8">
+      <h1 class="text-4xl font-black text-white sm:text-5xl mb-4">Demos Disponibles</h1>
+      <p class="text-[#5C677D] text-lg">Explora nuestros sistemas y páginas web en funcionamiento</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto max-w-6xl px-5 lg:px-8">
+      <div class="space-y-12">
+        {demos.map((category) => (
+          <div class="space-y-6">
+            <h2 class="text-3xl font-black text-[#0B132B]">{category.category}</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {category.items.map((demo) => (
+                <div class={`relative rounded-2xl p-6 border-2 transition-all ${
+                  demo.status === 'available' 
+                    ? 'bg-white border-[#0A58CA] hover:shadow-xl hover:shadow-[#0A58CA]/20 hover:-translate-y-1' 
+                    : 'bg-slate-50 border-slate-200 opacity-60'
+                }`}>
+                  <div class="flex items-start justify-between mb-4">
+                    <div class="h-12 w-12 rounded-xl bg-[#0A58CA]/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#0A58CA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    {demo.status === 'available' ? (
+                      <span class="px-3 py-1 text-xs font-black uppercase tracking-wider bg-[#0A58CA] text-white rounded-full">Disponible</span>
+                    ) : (
+                      <span class="px-3 py-1 text-xs font-black uppercase tracking-wider bg-slate-200 text-slate-600 rounded-full">Próximamente</span>
+                    )}
+                  </div>
+                  <h3 class="text-xl font-black text-[#0B132B] mb-2">{demo.name}</h3>
+                  {demo.status === 'available' ? (
+                    <a 
+                      href={demo.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 mt-4 text-[#0A58CA] font-black text-sm hover:text-[#FF6600] transition-colors"
+                    >
+                      <span>Ver Demo</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <p class="text-sm text-[#5C677D] mt-4">En desarrollo</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <div class="bg-[#0A58CA]/10 border-2 border-[#0A58CA] rounded-2xl p-8 max-w-2xl mx-auto">
+          <h3 class="text-2xl font-black text-[#0B132B] mb-4">¿Quieres un demo personalizado?</h3>
+          <p class="text-[#5C677D] mb-6">Contáctanos y crearemos una demo específica para tu negocio.</p>
+          <a 
+            href={whatsapp} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 px-8 py-4 text-xs font-black uppercase tracking-[0.2em] rounded-xl bg-[#FF6600] text-white transition-all hover:bg-[#FFAA00] hover:shadow-lg hover:shadow-[#FF6600]/30 active:scale-95"
+          >
+            Solicitar Demo Personalizado
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
